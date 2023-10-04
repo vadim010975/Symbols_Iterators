@@ -8,11 +8,10 @@ export default class Team {
 
   [Symbol.iterator]() {
     let current = -1;
-    const last = this.constCharacters - 1;
     return {
       next: () => {
         current += 1;
-        if (current > last) {
+        if (current >= this.constCharacters) {
           return {
             value: undefined,
             done: true,
